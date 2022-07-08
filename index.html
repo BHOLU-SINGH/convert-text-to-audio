@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate an Audio using Text | Free Projects1</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="In this project, we'll convert text into audio (google audio). We can only listen to audio. Once started it will be completed.">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convert Text to Audio</h1>
+        <textarea rows="10" class="enter_text"></textarea>
+        <button class="speak_btn">Convert & Play</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector('.speak_btn');
+        btn.onclick = () =>{
+            let text = document.querySelector('.enter_text').value;
+            let audio = new SpeechSynthesisUtterance();
+            audio.lang = 'en-US';
+            audio.rate = 1;
+            audio.volume = 1;
+            audio.pitch = 1;
+            if(text == ""){
+                text ="Please type something...";
+                audio.text = text;
+                speechSynthesis.speak(audio);
+            }else{
+                audio.text = text;
+                speechSynthesis.speak(audio);
+            }
+        }
+    </script>
+</body>
+</html>
